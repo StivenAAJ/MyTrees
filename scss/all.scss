@@ -1,0 +1,10 @@
+*{
+    margin: 0;
+    padding : 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+@import '../scss/header_footer.scss';
+@import '../scss/signup.scss';
+@import '../scss/page-color.scss';

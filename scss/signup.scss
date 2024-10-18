@@ -1,0 +1,101 @@
+@import 'variables/colors';
+@import 'variables/fonts';
+
+// Estructura principal
+.main-container {
+    width: 100%;
+    padding: 2rem;
+    background-color: $secondary-color;
+    font-family: $primary-font;
+}
+
+.signup-banner {
+    background-color: $secondary-color;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+    margin: 2rem auto;
+    max-width: 600px;
+}
+
+.signup-title {
+    font-family: $third-font;
+    font-size: 2.75rem;
+    font-weight: bold;
+    color: $primary-color;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.signup-description {
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: $primary-color;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.signup-divider {
+    border-top: 2px solid $nav-color-st;
+    margin-top: 1rem;
+}
+
+// Campos del formulario
+.form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+
+    label {
+        font-size: 1.1rem;
+        color: $primary-color;
+        margin-bottom: 0.5rem;
+    }
+
+    input {
+        font-family: $primary-font;
+        padding: 0.75rem;
+        border: 1px solid $primary-color;
+        border-radius: 8px;
+        font-size: 1rem;
+        color: $primary-color;
+        background-color: $secondary-color;
+        transition: box-shadow 0.3s ease;
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 5px $nav-color-st;
+        }
+    }
+
+    .error {
+        color: red;
+        font-weight: bold;
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+    }
+}
+
+// Botón
+.btn-primary {
+    background-color: $cta-general-color;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    color: $secondary-color;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-family: $primary-font;
+
+    &:hover {
+        background-color: darken($cta-general-color, 10%);
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 8px $cta-general-color;
+    }
+}

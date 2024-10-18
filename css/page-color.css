@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+:root {
+  background-color: white;
+  color: black; }
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+  font-family: Arial, sans-serif; }
+
+button {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  padding: 10;
+  padding-right: 10px;
+  padding-left: 10px;
+  cursor: pointer; }
+
+/* - - -  MODO OSCURO - - - */
+.dark {
+  background-color: #000000;
+  color: white; }
+
+.dark .index-content h1,
+.dark .index-content p {
+  color: #ffffff; }
+
+.dark .header-index {
+  background-color: #5da213; }
+
+.dark .header-name {
+  color: #ffffff; }
+
+.dark .navbar a {
+  color: #ffffff; }
+
+.dark button {
+  background-color: #333;
+  color: #0e7d49; }
+
+.dark footer {
+  background-color: #333;
+  color: #ffffff; }
+
+.dark input {
+  background-color: #333;
+  color: #ffffff;
+  border: 1px solid #000; }
+
+.dark input::placeholder {
+  color: #333; }
