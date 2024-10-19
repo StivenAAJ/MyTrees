@@ -9,7 +9,7 @@
   scroll-behavior: smooth; }
 
 .header-index {
-  background-color: #610ca7;
+  background-color: #086102;
   color: #000000;
   width: 100%;
   margin: 0 auto;
@@ -107,10 +107,15 @@
     transform: translateX(26px); }
 
 footer {
+  font-family: "Roboto", "sans-serif";
+  background-color: rgba(30, 30, 30, 0.637);
+  position: relative;
+  bottom: 0;
   text-align: center;
-  padding: 1rem;
-  background-color: #f8f9fa;
-  font-size: 0.875rem; }
+  font-size: 14px;
+  padding: 20px 0;
+  bottom: 0;
+  z-index: 1000; }
 
 .main-container {
   width: 100%;
@@ -142,7 +147,7 @@ footer {
   margin-bottom: 2rem; }
 
 .signup-divider {
-  border-top: 2px solid #610ca7;
+  border-top: 2px solid #086102;
   margin-top: 1rem; }
 
 .form-group {
@@ -164,7 +169,7 @@ footer {
     transition: box-shadow 0.3s ease; }
     .form-group input:focus {
       outline: none;
-      box-shadow: 0 0 5px #610ca7; }
+      box-shadow: 0 0 5px #086102; }
   .form-group .error {
     color: red;
     font-weight: bold;
@@ -189,57 +194,79 @@ footer {
     outline: none;
     box-shadow: 0 0 8px #0e7d49; }
 
-:root {
-  background-color: white;
-  color: black; }
+body {
+  font-family: "Roboto", "sans-serif";
+  color: #000000;
+  background-color: #ffffff; }
 
-footer {
-  background-color: #333;
-  color: #fff;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem; }
+
+.hero {
+  background-color: #ffffff;
+  padding: 2rem;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
   text-align: center;
-  padding: 20px;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
-  font-family: Arial, sans-serif; }
+  margin: 2rem auto;
+  max-width: 600px; }
 
-button {
-  background-color: transparent;
-  color: #fff;
-  border: none;
-  padding: 10;
-  padding-right: 10px;
-  padding-left: 10px;
-  cursor: pointer; }
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000000; }
 
-/* - - -  MODO OSCURO - - - */
-.dark {
-  background-color: #000000;
-  color: white; }
+.subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #000000; }
 
-.dark .index-content h1,
-.dark .index-content p {
-  color: #ffffff; }
+.divider {
+  width: 50%;
+  margin: 1rem auto;
+  border: 1px solid #000000; }
 
-.dark .header-index {
-  background-color: #5da213; }
+.form {
+  margin-top: 2rem; }
 
-.dark .header-name {
-  color: #ffffff; }
+.form__error {
+  color: red;
+  margin-bottom: 1rem; }
 
-.dark .navbar a {
-  color: #ffffff; }
+.form__group {
+  margin-bottom: 1.5rem; }
 
-.dark button {
-  background-color: #333;
-  color: #0e7d49; }
+.form__label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #000000;
+  margin-bottom: 0.5rem; }
 
-.dark footer {
-  background-color: #333;
-  color: #ffffff; }
+.form__input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-family: "Arial", "sans-serif";
+  border: 1px solid #000000;
+  border-radius: 0.25rem;
+  background-color: #ffffff;
+  color: #000000; }
 
-.dark input {
-  background-color: #333;
+.form__input:focus {
+  outline: none;
+  border-color: #0e7d49; }
+
+.btn-primary {
+  background-color: #0e7d49;
   color: #ffffff;
-  border: 1px solid #000; }
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-family: "Rubik", "sans-serif"; }
 
-.dark input::placeholder {
-  color: #333; }
+.btn-primary:hover {
+  background-color: #094f2e; }
