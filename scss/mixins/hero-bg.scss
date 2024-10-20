@@ -1,0 +1,17 @@
+@import '../variables/fonts.scss';
+@import '../variables/colors.scss';
+
+@mixin hero-background($image-url) {
+    font-family: $third-font, 'sans-serif';
+    font-size: 3rem;
+    height: 60vh;
+    background-image: url($image-url); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $primary-color;
+    text-align: center;
+}

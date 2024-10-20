@@ -5,7 +5,7 @@ function getUsers(): array {
     $users = [];
   
     if ($conn) {
-        $query = "SELECT id, firstname, lastname, email, province_id, password, status FROM users";
+        $query = "SELECT id, name, lastname, phone, email, direccion, pais, password, rol FROM users";
         $result = mysqli_query($conn, $query);
   
         if ($result) {
@@ -23,7 +23,7 @@ function getUsers(): array {
 function getUserById($Id) {
   $conn = getConnection();
   if ($conn) {
-      $sql = "SELECT firstname, lastname, email, province_id, password, status FROM users WHERE id = '$Id'";
+      $sql = "SELECT name, lastname, phone, email, direccion, pais, password, rol FROM users WHERE id = '$Id'";
       $result = mysqli_query($conn, $sql);
       $user = []; 
 
@@ -208,7 +208,7 @@ function authenticate($username, $password): bool|array|null {
   $password = md5($password);
 
   // Corregido: comillas simples eliminadas alrededor de 'status'
-  $sql = "SELECT * FROM users WHERE `email` = '$username' AND `password` = '$password' AND `status` = 'active'";
+  $sql = "SELECT * FROM users WHERE `email` = '$username' AND `password` = '$password' AND `rol` = 'USER'";
   $result = $conn->query($sql);
 
   // Verificamos si hay un error de conexión

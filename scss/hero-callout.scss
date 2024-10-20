@@ -1,0 +1,20 @@
+@import './variables/fonts.scss';
+@import './variables/colors.scss';
+@import './mixins/hero-bg.scss';
+
+.hero .index-hero{
+    @include hero-background ('../images/forest.jpeg');
+}
+
+.hero-content {
+    max-width: 800px;
+}
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}

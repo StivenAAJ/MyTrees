@@ -19,10 +19,10 @@ $user = isset($_SESSION['user']) ? $_SESSION['user'] : null;
     <div class="navbar">
       <nav>
         <ul>
-          <li><a href="/workshop5/signup.php">Signup</a></li>
-          <li><a href="/workshop5/index.php">Login</a></li>
-          <li><a href="/workshop5/logout.php">Logout</a></li>
-          <li><a href="/workshop5/users.php">Users</a></li>
+        <li><a href="/mytrees/signup.php">Signup</a></li>
+        <li><a href="/mytrees/login.php">Login</a></li>
+        <li><a href="/mytrees/logout.php">Logout</a></li>
+        <li><a href="/mytrees/users.php">Users</a></li>
         </ul>
       </nav>
       <div class="language-switch">
