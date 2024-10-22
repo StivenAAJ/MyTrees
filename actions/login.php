@@ -11,8 +11,8 @@ if ($_POST) {
     if ($user) {
         session_start();
         $_SESSION['user'] = $user;
-        header("Location: /mytrees/index.php");
+        header("Location: /index.php");
     } else {
-        header('Location: /mytrees/login.php?error=login');
+        header('Location: /login.php?error=login');
     }
 }

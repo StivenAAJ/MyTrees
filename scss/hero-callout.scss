@@ -2,7 +2,7 @@
 @import './variables/colors.scss';
 @import './mixins/hero-bg.scss';
 
-.hero .index-hero{
+.index-hero{
     @include hero-background ('../images/forest.jpeg');
 }
 

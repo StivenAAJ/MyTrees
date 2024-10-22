@@ -15,8 +15,26 @@
   /* Estilos para el interruptor */ }
   .header-index .header-name {
     font-family: "Rubik", "sans-serif";
-    color: #ffffff;
-    font-size: 3rem; }
+    color: #000000;
+    font-size: 3rem;
+    font-weight: bold;
+    background-color: #ffffff;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    /* Asegura que el texto y el ícono estén en línea */
+    align-items: center; }
+    .header-index .header-name i {
+      font-size: 2.5rem;
+      /* Tamaño del ícono, ajusta según sea necesario */
+      margin-left: 10px;
+      /* Separación entre el texto y el ícono */ }
+    .header-index .header-name .site-icon {
+      width: 30px;
+      /* Tamaño del ícono si usas una imagen */
+      height: auto;
+      margin-left: 10px; }
   .header-index .navbar {
     display: flex;
     align-items: center; }

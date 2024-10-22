@@ -6,15 +6,15 @@
 
 .card {
   width: 325px;
-  background-color: rgba(111, 111, 111, 0.559);
+  background-color: rgba(237, 234, 234, 0.86);
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   margin: 20px; }
 
 .card img {
   width: 100px;
-  height: auto;
+  height: max-content;
   padding-left: 25px;
   padding-top: 25px; }
 

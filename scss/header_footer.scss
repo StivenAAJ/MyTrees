@@ -16,8 +16,26 @@
 
     .header-name {
         font-family: $third-font;
-        color: $secondary-color;
+        color: $primary-color;
         font-size: 3rem;
+        font-weight: bold;
+        background-color: $secondary-color;
+        box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+        border-radius: 12px;
+        padding: 15px;
+        display: flex; /* Asegura que el texto y el ícono estén en línea */
+        align-items: center;
+    
+        i {
+            font-size: 2.5rem; /* Tamaño del ícono, ajusta según sea necesario */
+            margin-left: 10px; /* Separación entre el texto y el ícono */
+        }
+    
+        .site-icon {
+            width: 30px; /* Tamaño del ícono si usas una imagen */
+            height: auto;
+            margin-left: 10px;
+        }
     }
 
     .navbar {
