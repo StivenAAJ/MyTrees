@@ -205,25 +205,32 @@ function emailExist($email) {
  */
 function authenticate($username, $password): bool|array|null {
   $conn = getConnection();
-  $password = md5($password);
+  $passwordHash = md5($password); // Puedes cambiar esto por password_hash para mayor seguridad
 
-  // Corregido: comillas simples eliminadas alrededor de 'status'
-  $sql = "SELECT * FROM users WHERE `email` = '$username' AND `password` = '$password' AND `rol` = 'USER'";
-  $result = $conn->query($sql);
-
-  // Verificamos si hay un error de conexión
-  if ($conn->connect_errno) {
+  // Utilizar consultas preparadas para evitar inyecciones SQL
+  $sql = "SELECT id, name, rol FROM users WHERE email = ? AND password = ?";
+  $stmt = $conn->prepare($sql);
+  if (!$stmt) {
       $conn->close();
       return false;
   }
 
-  // Verificamos si hay resultados
+  // Vincular los parámetros de usuario y contraseña
+  $stmt->bind_param("ss", $username, $passwordHash);
+  $stmt->execute();
+  $result = $stmt->get_result();
+
+  // Verificar y devolver los datos del usuario si existen
   if ($result && $result->num_rows > 0) {
-      $userData = $result->fetch_array();
+      $userData = $result->fetch_assoc();
+      $stmt->close();
       $conn->close();
-      return $userData; // Devuelve los datos del usuario
+      return $userData;
   }
 
+  // Cerrar conexiones en caso de fallo
+  $stmt->close();
   $conn->close();
-  return null; // Devuelve null si no hay coincidencias
+  return null;
 }
+
