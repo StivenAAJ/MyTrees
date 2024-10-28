@@ -3,7 +3,7 @@
 
 ?>
 <?php require('inc/header.php') ?>
-<div class="main_index-container">
+<div class="warning-container">
   <section class="warning-hero">
     <div class="hero-content">
       <h1>Role Error !!</h1>

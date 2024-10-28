@@ -1,0 +1,25 @@
+.dashboard-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center; }
+  .dashboard-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2C3E50; }
+  .dashboard-container .stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem; }
+    .dashboard-container .stats .stat-item {
+      background-color: #3498DB;
+      color: #FFFFFF;
+      padding: 1.5rem;
+      border-radius: 8px;
+      width: 30%; }
+      .dashboard-container .stats .stat-item h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem; }
+      .dashboard-container .stats .stat-item p {
+        font-size: 2rem;
+        font-weight: bold; }

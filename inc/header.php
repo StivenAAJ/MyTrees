@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,17 +23,17 @@ session_start();
     <div class="navbar">
       <nav>
         <ul>
-          <li><a href="/index.php">Home</a></li>
-          <li><a href="/signup.php">Signup</a></li>
+          <li><a href="/index.php">Principal</a></li>
+          <li><a href="/signup.php">Registro</a></li>
           <li><a href="/login.php">Login</a></li>
           <select onchange="if (this.value) window.location.href=this.value;"> 
-            <option value="">Advanced</option>
-            <option value="/friends.php">Friends</option>
-            <option value="/trees.php">Trees</option> 
+            <option value="">Procesos</option>
+            <option value="/friends.php">Amigos</option>
+            <option value="/trees.php">Arboles</option> 
             <option value="/dashboard.php">Dashboard</option>          
           </select>
-          <li><a href="/logout.php">Logout</a></li>
-          <li><a href="/profile.php">My profile</a></li>
+          <li><a href="/logout.php">Cerrar Ses.</a></li>
+          <li><a href="/profile.php">Mi Perfil</a></li>
         </ul>
       </nav>
     </div>

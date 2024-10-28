@@ -3,39 +3,40 @@ include('utils/functions.php');
 require('inc/header.php');
 ?>
 
-<div class="main_index-container">
   <!-- Mensaje de bienvenida personalizado -->
   <?php if (isset($_SESSION['user_name'])): ?>
-    <div class="welcome-message">
-      <h2>Bienvenido, <?php echo htmlspecialchars($_SESSION['user_name']); ?>!</h2>
-      <p>Tu rol es: <?php echo htmlspecialchars($_SESSION['user_role']); ?>.</p>
-    </div>
-  <?php else: ?>
-    <div class="welcome-message">
-      <p>Bienvenido a nuestra comunidad de cuidado de árboles. ¡Inicia sesión para ver más detalles!</p>
-    </div>
-  <?php endif; ?>
-
+      <div class="welcome-message">
+        <h2>Bienvenido(a), <?php echo htmlspecialchars($_SESSION['user_name']); ?>!</h2>
+        <h2>Su rol es : <?php echo htmlspecialchars($_SESSION['user_role']); ?></h2>
+      </div>
+    <?php else: ?>
+      <div class="welcome-message">
+        <p>Bienvenido(a) a nuestra comunidad de cuidado de árboles. ¡Inicia sesión para ver más detalles!</p>
+      </div>
+    <?php endif; ?>
   <!-- Contenido principal -->
   <section class="index-hero">
     <div class="hero-content">
-      <h1>Welcome to My trees</h1>
-      <p>Making the difference, tree by tree</p>
+      <h1>Bienvenido a My trees</h1>
+      <p>Haciendo la diferencia, Arbol por Arbol</p>
     </div>
   </section>
-  <div class="card-container">
-    <div class="card">
-      <img src="images/SauceLloron.jpeg" alt="Sauce Lloron">
-      <div class="card-content">
-        <h3>Sauce llorón</h3>
-        <p>
-          El sauce llorón (Salix babylonica) es un árbol que pertenece
-          a la familia de las salicáceas y es nativo del este de Asia (especialmente del norte de China).
-        </p>
-        <a href="arboles.php#SauceL" class="btn">Más Información</a>
-      </div>
-    </div>
+  <div class="main_index-container">
+    
+    <h1>Nuestra Misión :</h1>
+      <p>Impulsar la reforestación y la restauración ambiental a través de la colaboración comunitaria y la tecnología.
+        A través de nuestra plataforma web, facilitamos la recaudación de fondos y promovemos la participación de personas y empresas
+        comprometidas en la plantación y el cuidado de un millón de árboles, creando un impacto positivo y sostenible en el medio ambiente.
+      </p>
+    <h1>Nuestra Visión :</h1>
+      <p>
+      Ser líderes en la conservación y reforestación a nivel global mediante una red de apoyo que fomente la educación ambiental
+      y el compromiso colectivo. Aspiramos a restaurar áreas degradadas y construir un futuro donde cada comunidad tenga acceso
+      a los recursos y la motivación para sembrar un millón de árboles y contribuir a un planeta más verde y saludable.
+      </p>
   </div>
-</div>
+
+
+
 
 <?php require('inc/footer.php'); ?>

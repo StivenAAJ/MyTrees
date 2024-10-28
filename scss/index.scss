@@ -1,0 +1,46 @@
+@import './variables/fonts.scss';
+@import './variables/colors.scss';
+
+.main_index-container{
+    h1 {
+        display: inline-flex;
+        align-items: center;
+        padding:10px 20px;
+        background-color: $cta-general-color;
+        color: $secondary-color;
+        font-family: $primary-font;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: 2.5rem; // Tamaño más grande para mayor impacto
+        text-align: center; // Centrado para llamar más la atención
+        text-decoration: underline;
+        text-transform: uppercase; // Texto en mayúsculas para dar énfasis
+        letter-spacing: 2px;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); // Sombra para profundidad
+        transition: transform 0.3s ease, color 0.3s ease; // Transición para efectos de hover
+
+        &:hover {
+            color: darken($primary-color, 10%); // Oscurece el color en hover
+            transform: scale(1.05); // Efecto de agrandamiento
+        }
+    }
+    
+    p {
+        color: lighten($primary-color, 15%); // Color ligeramente más claro para contraste
+        font-family: $primary-font;
+        font-size: 1.5rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+        text-align: justify;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); // Sombra suave para resaltar
+        padding: 0.5rem 1rem;
+        background-color: rgba($primary-color, 0.1); // Fondo suave en el párrafo
+        border-radius: 8px; // Bordes redondeados para un estilo moderno
+        transition: transform 0.3s ease, color 0.3s ease;
+
+        &:hover {
+            color: darken($primary-color, 10%); // Oscurece el color en hover
+            transform: scale(1.01); // Efecto de agrandamiento
+        }
+    }
+}
