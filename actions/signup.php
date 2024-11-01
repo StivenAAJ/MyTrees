@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         // Guardar usuario
         if (saveUser($user)) {
-            header("Location: index.php");
+            header("Location: /index.php");
             exit();
         } else {
             $error_msg = "Could not save user. Please try again.";

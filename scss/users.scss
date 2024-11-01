@@ -1,0 +1,96 @@
+@import './variables/fonts.scss';
+@import './variables/colors.scss';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $primary-font;
+  background-color: $secondary-color;
+  color: $primary-color;
+}
+
+.container-fluid {
+  padding: 2rem;
+}
+
+.jumbotron {
+  background-color: $header-footer-color;
+  padding: 2rem;
+  color: $secondary-color;
+  text-align: center;
+}
+
+h1.display-4 {
+  font-family: $third-font;
+  font-weight: 700;
+  color: $primary-color;
+}
+
+p.lead {
+  font-family: $secondary-font;
+  color: $secondary-color;
+}
+
+// Table Styles
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: $secondary-font;
+  margin-top: 1rem;
+}
+
+.table thead {
+  background-color: $nav-color-st;
+  color: $secondary-color;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  text-align: left;
+  border: 1px solid $primary-color;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: $secondary-nav-color;
+}
+
+// Button Styles
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: $primary-font;
+  transition: background-color 0.3s ease;
+  
+  &.btn-primary {
+    background-color: $cta-general-color;
+    color: $secondary-color;
+
+    &:hover {
+      background-color: darken($cta-general-color, 10%);
+    }
+  }
+  
+  &.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+// Footer Styles
+footer {
+  background-color: $header-footer-color;
+  color: $secondary-color;
+  text-align: center;
+  padding: 1rem;
+  font-family: $secondary-font;
+}

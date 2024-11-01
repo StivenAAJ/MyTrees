@@ -23,13 +23,15 @@ if (session_status() === PHP_SESSION_NONE) {
     <div class="navbar">
       <nav>
         <ul>
-          <li><a href="/index.php">Principal</a></li>
           <li><a href="/signup.php">Registro</a></li>
           <li><a href="/login.php">Login</a></li>
+          <li><a href="/index.php">Principal</a></li>
+          <li><a href="/get-trees.php">Comprar Arboles</a></li>
           <select onchange="if (this.value) window.location.href=this.value;"> 
             <option value="">Procesos</option>
-            <option value="/friends.php">Amigos</option>
+            <option value="/users.php">Amigos</option>
             <option value="/trees.php">Arboles</option> 
+            <option value="/especies.php">Especies</option> 
             <option value="/dashboard.php">Dashboard</option>          
           </select>
           <li><a href="/logout.php">Cerrar Ses.</a></li>
