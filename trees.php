@@ -23,6 +23,8 @@ require('inc/header.php');
 
 // Verificar si estamos en modo edición
 $treeToEdit = null;
+$treeId = $_GET['id'] ?? null;
+$userId = $_GET['user_id'] ?? null;
 $isEditing = isset($_GET['id']);
 
 if ($isEditing) {
@@ -33,26 +35,28 @@ if ($isEditing) {
         exit;
     }
 }
+
 ?>
 
 <body>
     <h1>Administrar Árboles</h1>
     
     <section class="tree-form">
-        <form action="actions/<?php echo $isEditing ? 'tree_edit.php?id=' . $treeId : 'tree_create.php'; ?>" 
-              method="POST" enctype="multipart/form-data">
-            
-            <h2><?php echo $isEditing ? 'Editar Árbol' : 'Crear Árbol'; ?></h2>
-
-            <label for="especie">Especie:</label>
-            <select name="especie" id="especie" required>
-                <?php foreach ($especies as $especie): ?>
-                    <option value="<?php echo htmlspecialchars($especie['idEspecie']); ?>"
-                        <?php echo $isEditing && $especie['idEspecie'] == $treeToEdit['id'] ? 'selected' : ''; ?>>
-                        <?php echo htmlspecialchars($especie['nombreComercial']); ?>
-                    </option>
-                <?php endforeach; ?>
-            </select>
+    <form action="actions/<?php echo $isEditing ? 'tree_edit.php?id=' . $treeId . '&user_id=' . $userId : 'tree_create.php'; ?>" 
+    method="POST" enctype="multipart/form-data">
+        
+        <!-- Resto del formulario -->
+        <input type="hidden" name="user_id" value="<?php echo htmlspecialchars($userId); ?>">
+        
+        <label for="especie">Especie:</label>
+        <select name="especie" id="especie" required>
+            <?php foreach ($especies as $especie): ?>
+                <option value="<?php echo htmlspecialchars($especie['idEspecie']); ?>"
+                    <?php echo $isEditing && $especie['idEspecie'] == $treeToEdit['id'] ? 'selected' : ''; ?>>
+                    <?php echo htmlspecialchars($especie['nombreComercial']); ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
             
             <label for="ubicacion">Ubicación Geográfica:</label>
             <input type="text" id="ubicacion" name="ubicacion" value="<?php echo $isEditing ? htmlspecialchars($treeToEdit['ubicacion']) : ''; ?>" required>
@@ -62,6 +66,9 @@ if ($isEditing) {
             
             <label for="precio">Precio:</label>
             <input type="text" id="precio" name="precio" value="<?php echo $isEditing ? htmlspecialchars($treeToEdit['precio']) : ''; ?>" required>
+
+            <label for="tam">Tamaño del Árbol:</label>
+            <input type="text" id="tam" name="tam" value="<?php echo $isEditing ? htmlspecialchars($treeToEdit['tam']) : ''; ?>" required>
             
             <label for="foto">Foto del Árbol:</label>
             <input type="file" id="foto" name="foto" <?php echo $isEditing ? '' : 'required'; ?>>
@@ -85,7 +92,8 @@ if ($isEditing) {
                     <p>
                         Ubicación: <?= htmlspecialchars($tree['ubicacion']) ?><br>
                         Estado: <?= htmlspecialchars($tree['estado']) ?><br>
-                        Precio: $<?= number_format($tree['precio'], 2) ?>
+                        Precio: ₡<?= number_format($tree['precio'], 2) ?>
+                        Tamaño: <?= htmlspecialchars($tree['tam']) ?><br>
                     </p>
                     <a href="trees.php?id=<?php echo $tree['id']; ?>">Editar</a> |
                     <a href="actions/tree_delete.php?id=<?php echo $tree['id']; ?>" onclick="return confirm('¿Seguro que deseas eliminar este árbol?');">Eliminar</a>
