@@ -9,7 +9,7 @@ if ($_SESSION['user_role'] !== 'ADMIN') {
     exit;
 }
 
-// Verificar que el ID y los datos del formulario están presentes
+// Check that the ID and form data are present
 if (!isset($_GET['id']) || $_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: ../trees.php?error=missing_data');
     exit;
@@ -22,7 +22,7 @@ $estado = $_POST['estado'];
 $precio = $_POST['precio'];
 $tam = $_POST['tam'];
 
-// Manejo de imagen si el usuario sube una nueva
+// Handle image if the user uploads a new one
 $fotoUrl = getTreeById($treeId)['foto_arbol'];
 if (isset($_FILES['foto']) && $_FILES['foto']['size'] > 0) {
     $fotoName = basename($_FILES['foto']['name']);

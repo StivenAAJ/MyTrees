@@ -2,13 +2,13 @@
 require_once 'utils/functions.php';
 require_once 'utils/trees-funcs.php';
 
-// Verificación de usuario y especies
+// User and species verification
 session_start();
 if ($_SESSION['user_role'] !== 'ADMIN') {
     header('Location: warning.php');
     exit;
 }
-//llamado a la funcion get Trees en funciones para los arboles.
+// Call to the getTrees function in functions for trees.
 $trees = getTrees();
 
 require('inc/header.php'); 

@@ -1,6 +1,7 @@
 <?php
 require_once 'functions.php';
 
+// Retrieves the stored data from species
 function getEspecies(): array {
     $conn = getConnection();
     $especies = [];
@@ -21,6 +22,7 @@ function getEspecies(): array {
     return $especies;
 }
 
+// Retrieves a species by its ID
 function getEspecieById($id) {
     $conn = getConnection();
     $especie = null;
@@ -43,6 +45,9 @@ function getEspecieById($id) {
     return $especie;
 }
 
+/**
+ * Inserts a new species into the database with its commercial and scientific names.
+ */
 function createEspecie($nombreCo, $nombreCi) {
     $conn = getConnection();
 
@@ -57,6 +62,9 @@ function createEspecie($nombreCo, $nombreCi) {
     }
 }
 
+/**
+ * Updates the data of a specific species in the database.
+ */
 function updateEspecie($id, $nombreCo, $nombreCi) {
     $conn = getConnection();
 
@@ -71,6 +79,9 @@ function updateEspecie($id, $nombreCo, $nombreCi) {
     }
 }
 
+/**
+ * Deletes a species from the database using its ID.
+ */
 function deleteEspecie($id) {
     $conn = getConnection();
 
@@ -85,6 +96,10 @@ function deleteEspecie($id) {
     }
 }
 
+/**
+ * Checks if there is at least one species in the database.
+ * Returns `true` if there are species, `false` otherwise.
+ */
 function verifySpeciesExist(): bool {
     $conn = getConnection();
     $exists = false;
@@ -104,7 +119,10 @@ function verifySpeciesExist(): bool {
     return $exists;
 }
 
-
+/**
+ * Checks if a species with the commercial name or scientific name already exists in the database.
+ * Returns `true` if it exists, `false` if not.
+ */
 function especieExists($nombreCo, $nombreCi): bool {
     $conn = getConnection();
     $exists = false;

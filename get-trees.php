@@ -1,7 +1,7 @@
 <?php
-// Incluye el archivo con la función para obtener los árboles
+
 require_once 'utils/trees-funcs.php';
-$trees = getTrees(); // Obtén todos los árboles de la base de datos
+$trees = getTrees(); // Get all trees from the DB
 require('inc/header.php'); 
 
 if (!isset($_SESSION['user_name'])) {
@@ -19,6 +19,7 @@ if (!isset($_SESSION['user_name'])) {
                     <div class="card-content">
                         <h3><?= htmlspecialchars($tree['especie']) ?></h3>
                         <p>
+                            Nombre científico: <?= htmlspecialchars($tree['nombre_cientifico']) ?><br>
                             Ubicación: <?= htmlspecialchars($tree['ubicacion']) ?><br>
                             Estado: <?= htmlspecialchars($tree['estado']) ?><br>
                             Precio: ₡<?= number_format($tree['precio'], 2) ?>

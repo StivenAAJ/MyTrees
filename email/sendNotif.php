@@ -2,6 +2,12 @@
 require '../utils/functions.php'; 
 require 'send-email.php';
 
+/**
+ * Checks if there are outdated trees in the database.
+ * Queries the table to find records that have not been
+ * updated in the last minute. If it finds outdated trees,
+ * it sends an email.
+ */
 function verificarArbolesDesactualizados() {
     $conn = getConnection();
     $arbolesDesactualizados = [];
@@ -20,7 +26,7 @@ function verificarArbolesDesactualizados() {
         
     }
 
-    // Si hay árboles desactualizados, envía una notificación por correo
+    // If there are outdated trees, send an email notification
     if (!empty($arbolesDesactualizados)) {
         echo "Se encontraron " . count($arbolesDesactualizados) . " árboles desactualizados. Enviando notificación.";
         enviarCorreoNotificacion($arbolesDesactualizados);
@@ -30,5 +36,5 @@ function verificarArbolesDesactualizados() {
     
 }
 
-// Ejecuta la función
+// Executes the function
 verificarArbolesDesactualizados();

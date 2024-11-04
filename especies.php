@@ -3,7 +3,7 @@ session_start();
 require_once 'utils/functions.php';
 require_once 'utils/especies-funcs.php';
 
-// Verificar si el usuario es admin
+// Verify if the user is an admin
 if ($_SESSION['user_role'] !== 'ADMIN') {
     header('Location: warning.php');
     exit;
@@ -41,14 +41,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: especies.php");
         exit();
     }
-     // Redirigir después de crear o eliminar para evitar reenvío de formulario
+     // Redirect after creating or deleting to avoid form resubmissione formulario
     if ($accion !== 'editar') {
         header("Location: especies.php");
         exit();
     }
 }
 
-// Obtener todas las especies
+// Get all species
 $especies = getEspecies();
 require('inc/header.php'); 
 ?>

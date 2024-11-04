@@ -34,6 +34,7 @@ require('inc/header.php');
                 <div class="card-content">
                     <h3><?= htmlspecialchars($tree['especie']) ?></h3>
                     <p>
+                        Nombre científico: <?= htmlspecialchars($tree['nombre_cientifico']) ?><br>
                         Ubicación: <?= htmlspecialchars($tree['ubicacion']) ?><br>
                         Estado: <?= htmlspecialchars($tree['estado']) ?><br>
                         Precio: $<?= number_format($tree['precio'], 2) ?>

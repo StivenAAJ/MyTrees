@@ -2,7 +2,10 @@
 require_once 'functions.php';
 
 
-
+/**
+ * Inserts a new tree record into the database with the specified details.
+ *
+ */
 function createTree($especieId, $ubicacion, $estado, $precio, $foto, $tam) {
     $conn = getConnection();
     $query = "INSERT INTO arboles (especie_comercial, ubicacion, estado, precio, foto_arbol, tam) VALUES (?, ?, ?, ?, ?, ?)";
@@ -14,6 +17,11 @@ function createTree($especieId, $ubicacion, $estado, $precio, $foto, $tam) {
     return $success;
 }
 
+/**
+ * Retrieves all tree records from the database with their species details.
+ *
+ * @return array Returns an array of tree records, each containing their details.
+ */
 function getTrees(): array {
     $conn = getConnection();
     $trees = [];
@@ -21,7 +29,7 @@ function getTrees(): array {
     if ($conn) {
         $query = "
             SELECT arboles.id, arboles.ubicacion, arboles.estado, arboles.precio, arboles.foto_arbol, arboles.tam,
-                   especies.nombreComercial AS especie
+                   especies.nombreComercial AS especie, especies.nombreCientifico AS nombre_cientifico
             FROM arboles
             JOIN especies ON arboles.especie_comercial = especies.idEspecie
         ";
@@ -39,10 +47,15 @@ function getTrees(): array {
     return $trees;
 }
 
-
+/**
+ * Retrieves a specific tree record by its ID, along with its species details.
+ *
+ * @param int $id The ID of the tree to retrieve.
+ * @return array|null Returns the tree record if found, otherwise null.
+ */
 function getTreeById($id) {
     $conn = getConnection();
-    $query = "SELECT arboles.*, especies.nombreComercial AS especie 
+    $query = "SELECT arboles.*, especies.nombreComercial AS especie, especies.nombreCientifico AS nombre_cientifico
               FROM arboles 
               JOIN especies ON arboles.especie_comercial = especies.idEspecie 
               WHERE arboles.id = ?";
@@ -56,7 +69,9 @@ function getTreeById($id) {
     return $tree;
 }
 
-
+/**
+ * Updates an existing tree record in the database with new details.
+ */
 function updateTree($id, $especieId, $ubicacion, $estado, $precio, $foto, $tam) {
     $conn = getConnection();
     $query = "UPDATE arboles SET especie_comercial = ?, ubicacion = ?, estado = ?, precio = ?, foto_arbol = ?, tam = ? WHERE id = ?";
@@ -68,6 +83,9 @@ function updateTree($id, $especieId, $ubicacion, $estado, $precio, $foto, $tam) 
     return $success;
 }
 
+/**
+ * Deletes a tree record from the database by its ID.
+ */
 function deleteTree($id) {
     $conn = getConnection();
     $query = "DELETE FROM arboles WHERE id = ?";
@@ -79,6 +97,9 @@ function deleteTree($id) {
     return $success;
 }
 
+/**
+ * Checks if a tree with the specified details already exists in the database.
+ */
 function treeExists( $especieId, $ubicacion, $estado, $precio, $foto, $tam): bool {
     $conn = getConnection();
     $exists = false;

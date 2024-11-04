@@ -1,7 +1,7 @@
 <?php
 include('utils/functions.php');
 
-$error_msg = ''; // Inicializar la variable de error
+$error_msg = ''; // Initialize the error variable
 
 require('inc/header.php');
 ?>

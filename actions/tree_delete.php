@@ -8,7 +8,7 @@ if ($_SESSION['user_role'] !== 'ADMIN') {
     exit;
 }
 
-// Verificar si el ID está presente en la URL
+// Verify if the ID is in the URL
 if (!isset($_GET['id'])) {
     header('Location: ../trees.php?error=missing_id');
     exit;

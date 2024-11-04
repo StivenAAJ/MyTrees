@@ -39,6 +39,7 @@ require('inc/header.php');
     <form action="buy-tree.php?id=<?= htmlspecialchars($treeId) ?>" method="POST" class="purchase-form">
         <h3>¿Deseas comprar el árbol: <?= htmlspecialchars($tree['especie']) ?>?</h3>
         <img src="<?= htmlspecialchars($tree['foto_arbol']) ?>">
+        <p>Nombre científico: <?= htmlspecialchars($tree['nombre_cientifico']) ?></p>
         <p>Ubicación: <?= htmlspecialchars($tree['ubicacion']) ?></p>
         <p>Precio: ₡<?= number_format($tree['precio'], 2) ?></p>
         <p>Tamaño: <?= htmlspecialchars($tree['tam']) ?></p>

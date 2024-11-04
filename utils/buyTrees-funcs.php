@@ -1,6 +1,10 @@
 <?php
 require_once 'utils/functions.php';
 
+/**
+ * Creates a purchase request for a specific tree, marking it as "SOLD" in the database.
+ * Returns `true` if both operations (insertion and update) are successful, otherwise returns `false`.
+ */
 function createPurchaseRequest($userId, $treeId) {
     $conn = getConnection(); 
 
@@ -21,7 +25,7 @@ function createPurchaseRequest($userId, $treeId) {
                     if (mysqli_stmt_execute($updateStmt)) {
                         mysqli_stmt_close($updateStmt);
                         mysqli_close($conn);
-                        return true; // Se completaron ambas consultas con éxito
+                        return true; // Both queries completed successfully
                     } else {
                         die("Error al ejecutar la consulta de actualización: " . mysqli_stmt_error($updateStmt));
                     }
@@ -41,12 +45,16 @@ function createPurchaseRequest($userId, $treeId) {
     return false;
 }
 
+/**
+ * Retrieves a list of trees purchased by a user, including details such as species and location.
+ * Returns an array of the purchased trees or an empty array in case of error.
+ */
 function getUserPurchasedTrees($userId) {
     $conn = getConnection();
 
     if ($conn) {
         $sql = "SELECT trees.id, trees.ubicacion, trees.estado, trees.precio, trees.foto_arbol, trees.tam,
-                       especies.nombreComercial AS especie
+                       especies.nombreComercial AS especie, especies.nombreCientifico AS nombre_cientifico
                 FROM soli_compra 
                 JOIN arboles AS trees ON soli_compra.id_arbol = trees.id
                 JOIN especies ON trees.especie_comercial = especies.idEspecie
@@ -67,7 +75,7 @@ function getUserPurchasedTrees($userId) {
             mysqli_stmt_close($stmt);
             mysqli_close($conn);
 
-            return $purchasedTrees; // Retornar los datos de los árboles comprados
+            return $purchasedTrees; // Return the purchased trees data
         } else {
             die("Error al preparar la consulta: " . mysqli_error($conn));
         }
@@ -75,7 +83,7 @@ function getUserPurchasedTrees($userId) {
         die("Error al conectar a la base de datos.");
     }
 
-    return []; // Retornar un arreglo vacío en caso de error
+    return []; // Return an empty array in case of error
 }
 
 ?>

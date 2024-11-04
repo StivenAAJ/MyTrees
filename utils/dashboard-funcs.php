@@ -1,7 +1,7 @@
 <?php
 require(__DIR__ . '/functions.php');
 
-// Obtiene la cantidad de amigos registrados
+// Gets the number of registered friends
 function getCantidadAmigos() {
     $conn = getConnection();
     $sql = "SELECT COUNT(*) AS total FROM users WHERE rol = 'USER'";
@@ -11,7 +11,7 @@ function getCantidadAmigos() {
     return $data['total'];
 }
 
-// Obtiene la cantidad de árboles disponibles
+// Gets the number of available trees
 function getCantidadArbolesDisponibles() {
     $conn = getConnection();
     $sql = "SELECT COUNT(*) AS total FROM arboles WHERE estado = 'DISPONIBLE'";
@@ -21,7 +21,7 @@ function getCantidadArbolesDisponibles() {
     return $data['total'];
 }
 
-// Obtiene la cantidad de árboles vendidos
+// Gets the number of sold trees
 function getCantidadArbolesVendidos() {
     $conn = getConnection();
     $sql = "SELECT COUNT(*) AS total FROM arboles WHERE estado = 'VENDIDO'";

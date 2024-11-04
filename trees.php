@@ -3,25 +3,25 @@ require_once 'utils/functions.php';
 require_once 'utils/trees-funcs.php';
 require_once 'utils/especies-funcs.php';
 
-// Verificación de usuario y especies
+// User and species verification
 session_start();
 if ($_SESSION['user_role'] !== 'ADMIN') {
     header('Location: warning.php');
     exit;
 }
 
-// Verificar si existen especies antes de mostrar el formulario
+// Verify if species exist before displaying the form
 if (!verifySpeciesExist()) {
     echo "<p>No existen especies en el sistema. <a href='especies.php'>Crear especies</a> o <a href='trees.php'>Volver al CRUD de árboles</a>.</p>";
     exit();
 }
 
-// Obtener la lista de especies
+// Get the list of species and trees
 $especies = getEspecies();
 $trees = getTrees();
 require('inc/header.php'); 
 
-// Verificar si estamos en modo edición
+// Check if we are in edit mode
 $treeToEdit = null;
 $treeId = $_GET['id'] ?? null;
 $userId = $_GET['user_id'] ?? null;
@@ -44,8 +44,6 @@ if ($isEditing) {
     <section class="tree-form">
     <form action="actions/<?php echo $isEditing ? 'tree_edit.php?id=' . $treeId . '&user_id=' . $userId : 'tree_create.php'; ?>" 
     method="POST" enctype="multipart/form-data">
-        
-        <!-- Resto del formulario -->
         <input type="hidden" name="user_id" value="<?php echo htmlspecialchars($userId); ?>">
         
         <label for="especie">Especie:</label>

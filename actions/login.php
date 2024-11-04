@@ -9,7 +9,7 @@ if ($_POST) {
 
     if ($user) {
         session_start();
-        // Guardar los datos necesarios en variables de sesión
+        // Save necessary data in session variables
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['user_name'] = $user['name'];
         $_SESSION['user_role'] = $user['rol'];

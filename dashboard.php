@@ -1,16 +1,16 @@
 <?php
-// Inicia la sesión y verifica el rol
+// Starts the session and verifies the role
 session_start();
-require('utils/dashboard-funcs.php');// Incluye los métodos necesarios para las estadísticas
+require('utils/dashboard-funcs.php');
 require('inc/header.php'); 
 
-// Redirige a warning.php si el usuario no es administrador
+// Redirects to warning.php if the user is not an administrator
 if ($_SESSION['user_role'] !== 'ADMIN') {
     header('Location: warning.php');
     exit;
 }
 
-// Obtiene las estadísticas
+// Gets the statistics
 $amigosRegistrados = getCantidadAmigos();
 $arbolesDisponibles = getCantidadArbolesDisponibles();
 $arbolesVendidos = getCantidadArbolesVendidos();

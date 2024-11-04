@@ -2,13 +2,12 @@
 session_start();
 include('utils/buyTrees-funcs.php');
 //include('utils/functions.php'); 
-// Verificar si el usuario es admin
 if ($_SESSION['user_role'] !== 'ADMIN') {
     header('Location: warning.php');
     exit;
 }
 
-// Obtener el ID del usuario
+// Obtain user ID
 $userId = $_GET['id'] ?? null;
 
 if (!$userId) {
