@@ -2,4 +2,6 @@
 package-lock.json
 # Ignorar la carpeta node_modules
 node_modules/
+#ignorar carpeta PHPMailer
+PHPMailer-master/
 
