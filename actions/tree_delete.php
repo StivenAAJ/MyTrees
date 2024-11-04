@@ -16,7 +16,6 @@ if (!isset($_GET['id'])) {
 
 $treeId = $_GET['id'];
 
-// Eliminar el árbol de la base de datos
 if (deleteTree($treeId)) {
     header('Location: ../trees.php?status=deleted');
 } else {

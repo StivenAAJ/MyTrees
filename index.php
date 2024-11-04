@@ -1,8 +1,13 @@
 <?php
 include('utils/functions.php');
 require('inc/header.php');
-?>
 
+if (!isset($_SESSION['user_name'])) {
+  header('Location: login.php');
+  exit;
+}
+?>
+  
   <!-- Mensaje de bienvenida personalizado -->
   <?php if (isset($_SESSION['user_name'])): ?>
       <div class="welcome-message">

@@ -20,6 +20,7 @@ $especieId = $_POST['especie'];
 $ubicacion = $_POST['ubicacion'];
 $estado = $_POST['estado'];
 $precio = $_POST['precio'];
+$tam = $_POST['tam'];
 
 // Manejo de imagen si el usuario sube una nueva
 $fotoUrl = getTreeById($treeId)['foto_arbol'];
@@ -32,8 +33,7 @@ if (isset($_FILES['foto']) && $_FILES['foto']['size'] > 0) {
     }
 }
 
-// Actualizar en la base de datos
-if (updateTree($treeId, $especieId, $ubicacion, $estado, $precio, $fotoUrl)) {
+if (updateTree($treeId, $especieId, $ubicacion, $estado, $precio, $fotoUrl, $tam)) {
     header('Location: ../trees.php?status=updated');
 } else {
     header('Location: ../trees.php?status=error');

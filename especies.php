@@ -17,22 +17,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($accion === 'crear') {
         $nombreCo = $_POST['nombreCo'];
         $nombreCi = $_POST['nombreCi'];
-        createEspecie($nombreCo, $nombreCi);
+
+        if (especieExists($nombreCo, $nombreCi)) {
+            echo "<script>alert('La especie ya existe en la base de datos.');</script>";
+        } else {
+            createEspecie($nombreCo, $nombreCi);
+            header("Location: especies.php");
+            exit();
+        }
     } elseif ($accion === 'editar') {
         $id = $_POST['id'];
-        // Obtener datos de la especie a editar
         $especieToEdit = getEspecieById($id);
     } elseif ($accion === 'guardarEdicion') {
         $id = $_POST['id'];
         $nombreCo = $_POST['nombreCo'];
         $nombreCi = $_POST['nombreCi'];
         updateEspecie($id, $nombreCo, $nombreCi);
+        header("Location: especies.php");
+        exit();
     } elseif ($accion === 'eliminar') {
         $id = $_POST['id'];
         deleteEspecie($id);
+        header("Location: especies.php");
+        exit();
     }
-
-    // Redirigir después de crear o eliminar para evitar reenvío de formulario
+     // Redirigir después de crear o eliminar para evitar reenvío de formulario
     if ($accion !== 'editar') {
         header("Location: especies.php");
         exit();

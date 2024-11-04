@@ -6,9 +6,9 @@
 <div class="warning-container">
   <section class="warning-hero">
     <div class="hero-content">
-      <h1>Role Error !!</h1>
-      <p>Sorry, but this section is just for admins, we're sorry about that</p>
-      <button onclick="history.back()">Go Back</button>
+      <h1>Error de Acceso !!</h1>
+      <p>Lo sentimos, pero este apartado es solo para Administración.</p>
+      <button onclick="history.back()">Volver Atras</button>
     </div>
   </section>
   

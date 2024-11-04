@@ -45,7 +45,7 @@
                 <td><?php echo $user['pais']; ?></td>
                 <td><?php echo $user['rol']; ?></td>
                 <td>
-                  <a href="/workshop5/cruds.php?id=<?php echo $user['id']; ?>" class="btn btn-primary btn-sm">Mas Informacion</a>
+                  <a href="/friend-tree.php?id=<?php echo $user['id']; ?>" class="btn btn-primary btn-sm">Ver Arboles</a>
                 </td>
             </tr>
           <?php endforeach; ?>

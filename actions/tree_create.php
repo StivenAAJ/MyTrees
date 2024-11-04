@@ -9,18 +9,18 @@ if (isset($_POST['especie'], $_POST['ubicacion'], $_POST['estado'], $_POST['prec
     $ubicacion = $_POST['ubicacion'];
     $estado = $_POST['estado'];
     $precio = $_POST['precio'];
+    $tam = $_POST['tam'];
 
     // Procesar la imagen
     $fotoName = basename($_FILES['foto']['name']);
     $fotoPath = '../images/' . $fotoName;
-
-    // Mover el archivo a la carpeta images
+    
     if (move_uploaded_file($_FILES['foto']['tmp_name'], $fotoPath)) {
         // Guardar solo la URL relativa en la base de datos
         $fotoUrl = 'images/' . $fotoName;
 
         // Crear el árbol en la base de datos
-        if (createTree($especieId, $ubicacion, $estado, $precio, $fotoUrl)) {
+        if (createTree($especieId, $ubicacion, $estado, $precio, $fotoUrl, $tam)) {
             header('Location: ../trees.php?success=1');
             exit;
         } else {

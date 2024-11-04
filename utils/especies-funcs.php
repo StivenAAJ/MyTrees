@@ -105,5 +105,29 @@ function verifySpeciesExist(): bool {
 }
 
 
+function especieExists($nombreCo, $nombreCi): bool {
+    $conn = getConnection();
+    $exists = false;
+
+    if ($conn) {
+        $query = "SELECT COUNT(*) AS total FROM especies WHERE nombreComercial = ? OR nombreCientifico = ?";
+        $stmt = mysqli_prepare($conn, $query);
+        mysqli_stmt_bind_param($stmt, 'ss', $nombreCo, $nombreCi);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+
+        if ($result) {
+            $row = mysqli_fetch_assoc($result);
+            $exists = $row['total'] > 0;
+        }
+
+        mysqli_stmt_close($stmt);
+        mysqli_close($conn);
+    }
+
+    return $exists;
+}
+
+
 ?>
 
