@@ -9,6 +9,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -222,7 +223,7 @@ footer {
 body {
   font-family: "Roboto", "sans-serif";
   color: #000000;
-  background-color: #ffffff; }
+  background-color: #086102; }
 
 .container {
   max-width: 1200px;
@@ -232,7 +233,7 @@ body {
 .hero {
   background-color: #ffffff;
   padding: 2rem;
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.432);
   border-radius: 12px;
   text-align: center;
   margin: 2rem auto;
@@ -477,15 +478,18 @@ h1, h2 {
 .tree-form, .tree-list {
   max-width: 800px;
   margin: 20px auto;
-  padding: 20px;
+  padding: 12px;
   border: 1px solid var(#00000062);
-  border-radius: 5px; }
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px #000000; }
 
 .tree-form label, .tree-form input, .tree-form select, .tree-form button {
   display: block;
   width: 100%;
   margin-bottom: 10px;
-  font-family: var("Arial", "sans-serif"); }
+  font-family: "Arial", "sans-serif";
+  border-radius: 12px;
+  padding: 12px; }
 
 .tree-form button {
   background-color: var(#0e7d49);
@@ -681,3 +685,86 @@ footer {
     cursor: pointer; }
     #bitacora-form button:hover {
       background-color: #45a049; }
+
+h1 {
+  color: #0b08a8;
+  margin-bottom: 20px;
+  text-align: center; }
+
+form {
+  max-width: 500px;
+  margin: 0 auto 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #00000062;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+  form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    color: #086102; }
+  form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #5da213;
+    border-radius: 8px;
+    font-size: 1rem; }
+  form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0e7d49;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background-color: #0e7d49 !important; }
+    form button:hover {
+      background-color: #094f2e; }
+    form button.edit-button {
+      background-color: #086102; }
+      form button.edit-button:hover {
+        background-color: #042f01; }
+    form button.delete-button {
+      background-color: #e74c3c; }
+      form button.delete-button:hover {
+        background-color: #d62c1a; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px; }
+  table th, table td {
+    padding: 12px;
+    border: 1px solid #00000062;
+    text-align: center;
+    font-size: 0.9rem; }
+  table th {
+    background-color: #086102;
+    color: #ffffff; }
+  table tr:nth-child(even) {
+    background-color: white; }
+  table tr:hover {
+    background-color: #3be997; }
+
+table td button {
+  padding: 5px 8px;
+  font-size: 0.8rem;
+  margin: 3px 0;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+  width: auto;
+  transition: background-color 0.2s; }
+  table td button.edit-button {
+    background-color: #086102 !important; }
+    table td button.edit-button:hover {
+      background-color: #042f01; }
+  table td button.delete-button {
+    background-color: #e74c3c !important; }
+    table td button.delete-button:hover {
+      background-color: #d62c1a; }

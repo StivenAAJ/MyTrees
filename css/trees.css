@@ -10,15 +10,18 @@ h1, h2 {
 .tree-form, .tree-list {
   max-width: 800px;
   margin: 20px auto;
-  padding: 20px;
+  padding: 12px;
   border: 1px solid var(#00000062);
-  border-radius: 5px; }
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px #000000; }
 
 .tree-form label, .tree-form input, .tree-form select, .tree-form button {
   display: block;
   width: 100%;
   margin-bottom: 10px;
-  font-family: var("Arial", "sans-serif"); }
+  font-family: "Arial", "sans-serif";
+  border-radius: 12px;
+  padding: 12px; }
 
 .tree-form button {
   background-color: var(#0e7d49);

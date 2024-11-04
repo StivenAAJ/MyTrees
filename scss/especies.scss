@@ -1,0 +1,128 @@
+// Variables de colores y configuración
+@import './variables/fonts.scss';
+@import './variables/colors.scss';
+
+$border-radius: 8px;
+
+// Encabezado principal
+h1 {
+  color: $welcome-message-color;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+// Formulario de administración
+form {
+  max-width: 500px;
+  margin: 0 auto 20px;
+  padding: 20px;
+  background-color: $secondary-color;
+  border: 1px solid $header-footer-color;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    color: $nav-color-st;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid $secondary-nav-color;
+    border-radius: $border-radius;
+    font-size: 1rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: $cta-general-color;
+    color: $secondary-color;
+    border: none;
+    border-radius: $border-radius;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background-color: $cta-general-color !important; // Forzar el color de fondo
+
+    &:hover {
+      background-color: darken($cta-general-color, 10%);
+    }
+
+    &.edit-button {
+      background-color: $nav-color-st;
+
+      &:hover {
+        background-color: darken($nav-color-st, 10%);
+      }
+    }
+
+    &.delete-button {
+      background-color: #e74c3c;
+
+      &:hover {
+        background-color: darken(#e74c3c, 10%);
+      }
+    }
+  }
+}
+
+// Estilos para la tabla de especies
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+
+  th, td {
+    padding: 12px;
+    border: 1px solid $header-footer-color;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  th {
+    background-color: $nav-color-st;
+    color: $secondary-color;
+  }
+
+  tr:nth-child(even) {
+    background-color: lighten($secondary-color, 40%);
+  }
+
+  tr:hover {
+    background-color: lighten($cta-general-color, 30%);
+  }
+}
+
+
+table td button {
+  padding: 5px 8px;
+  font-size: 0.8rem;
+  margin: 3px 0;
+  border: none;
+  border-radius: 5px;
+  color: $secondary-color;
+  cursor: pointer;
+  width: auto;
+  transition: background-color 0.2s;
+
+  &.edit-button {
+    background-color: $nav-color-st !important;
+
+    &:hover {
+      background-color: darken($nav-color-st, 10%);
+    }
+  }
+
+  &.delete-button {
+    background-color: #e74c3c !important;
+
+    &:hover {
+      background-color: darken(#e74c3c, 10%);
+    }
+  }
+}
