@@ -1,0 +1,24 @@
+@import './variables/fonts.scss';
+@import './variables/colors.scss';
+
+.welcome-message{
+    padding: 10px 20px;
+    text-align: center;
+    align-items: center;
+    color: $secondary-color;
+    font-family: $primary-font;
+    background-color: $welcome-message-color;
+    font-weight: bold;
+    font-size: 1.25rem;
+    box-shadow: 2px 2px 5px $secondary-nav-color;
+
+}
+
+.titulo1{
+    padding-top: 1rem;
+    text-align: center;
+    padding: auto;
+    color: $primary-color;
+    font-family: $third-font;
+    font-size: 3rem;
+}

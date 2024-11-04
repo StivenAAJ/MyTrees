@@ -1,0 +1,30 @@
+#bitacora-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px; }
+  #bitacora-form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold; }
+  #bitacora-form input[type="text"],
+  #bitacora-form input[type="number"],
+  #bitacora-form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px; }
+  #bitacora-form button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer; }
+    #bitacora-form button:hover {
+      background-color: #45a049; }

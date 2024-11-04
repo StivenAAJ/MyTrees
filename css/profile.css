@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+.welcome-message {
+  padding: 10px 20px;
+  text-align: center;
+  align-items: center;
+  color: #ffffff;
+  font-family: "Roboto", "sans-serif";
+  background-color: #0b08a8;
+  font-weight: bold;
+  font-size: 1.25rem;
+  box-shadow: 2px 2px 5px #5da213; }
+
+.titulo1 {
+  padding-top: 1rem;
+  text-align: center;
+  padding: auto;
+  color: #000000;
+  font-family: "Rubik", "sans-serif";
+  font-size: 3rem; }
