@@ -7,19 +7,15 @@ if (!isset($_SESSION['user_name'])) {
   exit;
 }
 ?>
-  
-  <!-- Mensaje de bienvenida personalizado -->
   <?php if (isset($_SESSION['user_name'])): ?>
       <div class="welcome-message">
         <h2>Bienvenido(a), <?php echo htmlspecialchars($_SESSION['user_name']); ?>!</h2>
-        <h2>Su rol es : <?php echo htmlspecialchars($_SESSION['user_role']); ?></h2>
       </div>
     <?php else: ?>
       <div class="welcome-message">
         <p>Bienvenido(a) a nuestra comunidad de cuidado de árboles. ¡Inicia sesión para ver más detalles!</p>
       </div>
     <?php endif; ?>
-  <!-- Contenido principal -->
   <section class="index-hero">
     <div class="hero-content">
       <h1>Bienvenido a My trees</h1>

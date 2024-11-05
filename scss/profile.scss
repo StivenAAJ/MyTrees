@@ -2,14 +2,14 @@
 @import './variables/colors.scss';
 
 .welcome-message{
-    padding: 10px 20px;
+    padding: 10px 10px;
     text-align: center;
     align-items: center;
     color: $secondary-color;
     font-family: $primary-font;
-    background-color: $welcome-message-color;
+    background: linear-gradient(90deg, #2e8b57, #003366);
     font-weight: bold;
-    font-size: 1.25rem;
+    font-size: 1rem;
     box-shadow: 2px 2px 5px $secondary-nav-color;
 
 }

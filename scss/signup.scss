@@ -1,7 +1,6 @@
 @import 'variables/colors';
 @import 'variables/fonts';
 
-// Estructura principal
 .main-container {
     width: 100%;
     padding: 2rem;
@@ -40,7 +39,6 @@
     margin-top: 1rem;
 }
 
-// Campos del formulario
 .form-group {
     margin-bottom: 1.5rem;
     display: flex;
@@ -76,7 +74,7 @@
     }
 }
 
-// Botón
+
 .btn-primary {
     background-color: $cta-general-color;
     border: none;
